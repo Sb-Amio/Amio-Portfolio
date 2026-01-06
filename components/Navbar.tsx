@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Github, Mail } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -67,7 +67,7 @@ export const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-b border-slate-800"
+            className="md:hidden glass border-b border-slate-800 overflow-hidden"
           >
             <div className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
@@ -87,5 +87,3 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
-
-import { AnimatePresence } from 'framer-motion';
